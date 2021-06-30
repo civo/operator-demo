@@ -1,0 +1,34 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes/status
+  verbs:
+  - get
+  - patch
+  - update

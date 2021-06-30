@@ -1,0 +1,24 @@
+# permissions for end users to edit demovolumes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: demovolume-editor-role
+rules:
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes/status
+  verbs:
+  - get

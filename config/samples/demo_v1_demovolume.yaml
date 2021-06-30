@@ -1,0 +1,8 @@
+apiVersion: demo.demo.civo.io/v1
+kind: DemoVolume
+metadata:
+  name: demovolume-sample
+spec:
+  # Add fields here
+  name: demo
+  size: 10

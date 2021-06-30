@@ -1,0 +1,20 @@
+# permissions for end users to view demovolumes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: demovolume-viewer-role
+rules:
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - demo.demo.civo.io
+  resources:
+  - demovolumes/status
+  verbs:
+  - get
